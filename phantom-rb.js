@@ -6,6 +6,7 @@ var urlAuth = env.AUTHURL;
 var jwt = env.JWT;
 var width = env.width;
 var height = env.height;
+var dataFolder = env.DATAFOLDER;
 
 var emptyFunction = function () { };
 
@@ -38,6 +39,6 @@ function open() {
 }
 
 function onPageReady() {
-  page.render('/data/' + new Date().toString() + '.png');
+  page.render(dataFolder + new Date().toString() + '.png');
   phantom.exit();
 }
