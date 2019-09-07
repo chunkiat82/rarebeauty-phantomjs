@@ -1,0 +1,12 @@
+{
+  "name": "rarebeauty-phantomjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:chunkiat82/rarebeauty-phantomjs.git",
+  "author": "Raymond Ho <chunkiat82@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "nodemailer": "^6.3.0"
+  }
+}
