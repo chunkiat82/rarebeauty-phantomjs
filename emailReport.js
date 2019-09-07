@@ -3,7 +3,7 @@ var moment = require('moment');
 require('dotenv').config();
 
 console.log(process.env.PASSWORD);
-console.log(process.env.FULLFILEPATH);
+console.log(process.env.filename);
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -22,7 +22,7 @@ const mailOptions = {
     attachments: [        
         {   // file on disk as an attachment
             filename: `report-${now}.png`,
-            path: process.env.FULLFILEPATH // stream this file
+            path: `/data/jenkins/workspace/rarebeauty-daily-kibana/data/${process.env.filename}` // stream this file
         }
     ]
 };
