@@ -6,6 +6,7 @@ var urlAuth = env.AUTHURL;
 var jwt = env.JWT;
 var width = env.width;
 var height = env.height;
+var filename = env.filename;
 
 page.viewportSize = { width: width, height: height };
 
@@ -36,6 +37,6 @@ function open() {
 }
 
 function onPageReady() {
-  page.render('/data/' + new Date().toString() + '.png');
+  page.render('/data/' + filename + '.png');
   phantom.exit();
 }

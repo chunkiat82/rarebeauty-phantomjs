@@ -1,13 +1,14 @@
 var nodemailer = require('nodemailer');
-var moment = rquire('moment');
+var moment = require('moment');
 
-console.log(process.env);
+console.log(process.env.PASSWORD);
+console.log(process.env.FULLFILEPATH);
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'rarebeauty@soho.sg',
-        pass: `${process.env.password}`
+        pass: `${process.env.PASSWORD}`
     }
 });
 
@@ -17,7 +18,12 @@ const mailOptions = {
     from: 'jenkins@soho.sg', // sender address
     to: 'rarebeauty@soho.sg', // list of receivers
     subject: `Rare Beauty Report - ${now}`, // Subject line
-    html: '<p>Your html here</p>'// plain text body
+    attachments: [        
+        {   // file on disk as an attachment
+            filename: `report-${now}.png`,
+            path: FULLFILEPATH // stream this file
+        }
+    ]
 };
 
 transporter.sendMail(mailOptions, function (err, info) {
