@@ -39,6 +39,6 @@ function open() {
 }
 
 function onPageReady() {
-  page.render(dataFolder + new Date().toString() + '.png');
+  page.render(dataFolder + '/' + new Date().toString() + '.png');
   phantom.exit();
 }
