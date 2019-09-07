@@ -7,6 +7,8 @@ console.log(process.env.PASSWORD);
 console.log(process.env.FILENAME);
 console.log(process.env.FULLPATH);
 
+var path = `${process.env.FULLPATH}/${process.env.FILENAME}.png`
+
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -24,7 +26,7 @@ const mailOptions = {
     attachments: [        
         {   // file on disk as an attachment
             filename: `report-${now}.png`,
-            path: `${process.env.FULLPATH}/${process.env.FILENAME}.png` // stream this file
+            path: path // stream this file
         }
     ]
 };
