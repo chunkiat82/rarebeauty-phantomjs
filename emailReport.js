@@ -22,7 +22,7 @@ const mailOptions = {
     attachments: [        
         {   // file on disk as an attachment
             filename: `report-${now}.png`,
-            path: `/data/jenkins/workspace/rarebeauty-daily-kibana/data/${process.env.filename}.png` // stream this file
+            path: `/var/jenkins_home/workspace/rarebeauty-daily-kibana/data/${process.env.filename}.png` // stream this file
         }
     ]
 };
