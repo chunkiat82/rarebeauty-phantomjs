@@ -1,10 +1,16 @@
 var system = require('system');
-var env = system.env;
 var page = require('webpage').create();
+var env = system.env;
 var urlKibana = env.KIBANAURL;
 var urlAuth = env.AUTHURL;
 var jwt = env.JWT;
-page.viewportSize = { width: 1024, height: 1024 };
+var width = env.width;
+var height = env.height;
+
+var emptyFunction = function () { };
+
+page.viewportSize = { width: width, height: height };
+
 page.open(urlAuth + jwt, function (status) {
   console.log("Status: " + status);
   if (status === "success") {
@@ -30,7 +36,6 @@ function open() {
     checkReadyState();
   });
 }
-
 
 function onPageReady() {
   page.render('/data/' + new Date().toString() + '.png');
