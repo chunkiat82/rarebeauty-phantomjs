@@ -6,7 +6,7 @@ var urlAuth = env.AUTHURL;
 var jwt = env.JWT;
 var width = env.width;
 var height = env.height;
-var filename = env.filename;
+var filename = env.FILENAME;
 
 page.viewportSize = { width: width, height: height };
 
