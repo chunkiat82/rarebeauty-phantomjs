@@ -1,5 +1,6 @@
 var nodemailer = require('nodemailer');
 var moment = require('moment');
+require('dotenv').config();
 
 console.log(process.env.PASSWORD);
 console.log(process.env.FULLFILEPATH);
