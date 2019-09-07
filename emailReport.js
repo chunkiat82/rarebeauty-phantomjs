@@ -24,7 +24,7 @@ const mailOptions = {
     attachments: [        
         {   // file on disk as an attachment
             filename: `report-${now}.png`,
-            path: `${process.env.FULLPATH}/${process.env.filename}.png` // stream this file
+            path: `${process.env.FULLPATH}/${process.env.FILENAME}.png` // stream this file
         }
     ]
 };
