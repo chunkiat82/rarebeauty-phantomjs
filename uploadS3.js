@@ -2,10 +2,8 @@ var AWS = require('aws-sdk'),
     fs = require('fs');
 require('dotenv').config();
 var moment = require('moment');
-var folderStructure = moment().format('YYYY/MM');
-
-// For dev purposes only
-// AWS.config.update({ accessKeyId: process.env.ACCESSKEYID, secretAccessKey: process.env.ACCESSKEYSECRET });
+var folderStructure = moment().format('YYYY/MM/DD');
+var fileName = moment().format('YYYYMMDD');
 
 // Read in the file, convert it to base64, store to S3
 fs.readFile(`${process.env.FULLPATH}/${process.env.FILENAME}.png`, function (err, data) {
@@ -17,7 +15,7 @@ fs.readFile(`${process.env.FULLPATH}/${process.env.FILENAME}.png`, function (err
 
     var s3 = new AWS.S3();
     s3.putObject({
-        Key: `${folderStructure}/${process.env.FILENAME}.png`,
+        Key: `${folderStructure}/RareBeauty-DailyTotal-${fileName}.png`,
         Bucket: 'rb-accounts',
         Body: base64data,
         //ACL: 'public-read'
