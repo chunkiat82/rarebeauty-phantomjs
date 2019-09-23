@@ -26,7 +26,7 @@ function open() {
         });
 
         if ("complete" === readyState) {
-          setTimeout(onPageReady, 2000);
+          setTimeout(onPageReady, 5000);
         } else {
           checkReadyState();
         }
