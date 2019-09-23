@@ -7,8 +7,7 @@ var jwt = env.JWT;
 var width = env.width;
 var height = env.height;
 var filename = env.FILENAME;
-var filename = env.FILENAME;
-var waitTimeout = (env.WAIT_TIMEOUT && NUMBER(env.WAIT_TIMEOUT)) || 2000;
+
 page.viewportSize = { width: width, height: height };
 
 page.open(urlAuth + jwt, function (status) {
@@ -27,7 +26,7 @@ function open() {
         });
 
         if ("complete" === readyState) {
-          setTimeout(onPageReady, waitTimeout);
+          setTimeout(onPageReady, 2000);
         } else {
           checkReadyState();
         }
