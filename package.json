@@ -6,7 +6,7 @@
   "author": "Raymond Ho <chunkiat82@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.524.0",
+    "aws-sdk": "^2.814.0",
     "dotenv": "^8.1.0",
     "moment": "^2.24.0",
     "nodemailer": "^6.3.0"
